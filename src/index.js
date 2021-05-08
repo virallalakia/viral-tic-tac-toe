@@ -1,44 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
-        {/* TODO */}
-      </button>
+      <Grid item xs={1}>
+        <Paper variant="outlined" square >
+          O
+        </Paper>
+      </Grid>
     );
   }
 }
 
 class Board extends React.Component {
-  renderSquare(i) {
-    return <Square />;
-  }
-
   render() {
     const status = 'Next player: X';
 
     return (
-      <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
+      <Grid container justify="center" alignItems="center">
+        <Grid container item justify="center" alignItems="center">
+          <Square />
+          <Square />
+          <Square />
+        </Grid>
+        <Grid container item justify="center" alignItems="center">
+          <Square />
+          <Square />
+          <Square />
+        </Grid>
+        <Grid container item justify="center" alignItems="center">
+          <Square />
+          <Square />
+          <Square />
+        </Grid>
+      </Grid>
     );
   }
 }
@@ -54,14 +53,23 @@ class Game extends React.Component {
           <div>{/* status */}</div>
           <ol>{/* TODO */}</ol>
         </div>
+        <Button variant="contained">Hello World</Button>
       </div>
     );
   }
 }
 
-// ========================================
+class App extends React.Component {
+  render() {
+    return (
+      <div className="app">
+        <Game />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-  <Game />,
+  <App />,
   document.getElementById('root')
 );
