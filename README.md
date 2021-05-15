@@ -1,2 +1,4 @@
-# fibo-144
-4 x 4 board game based on fibonacci series
+[![](https://img.shields.io/github/license/virallalakia/viral-tic-tac-toe)][LICENSE]
+
+# viral-tic-tac-toe
+A very simple mode of the tic-tac-toe game. It is built to learn React.
